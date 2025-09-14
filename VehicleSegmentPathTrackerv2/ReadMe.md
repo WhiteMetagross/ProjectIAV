@@ -77,7 +77,7 @@ git+https://github.com/WhiteMetagross/newFastReID.git  # Custom FastReID fork fo
 
 1. **Clone the repository**:
 ```bash
-git clone <repository-url>
+git clone https://github.com/WhiteMetagross/ProjectIAV/tree/main/VehicleSegmentPathTrackerv2.git
 cd VehicleSegmentPathTrackerV2
 ```
 
@@ -219,3 +219,4 @@ If you use this work in your research, please cite:
 }
 
 ```
+
