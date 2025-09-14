@@ -190,8 +190,9 @@ If you use this work in your research, please cite:
   title={Vehicle Segment Path Tracker V2.5},
   author={Your Name},
   year={2025},
-  url={https://github.com/your-username/VehicleSegmentPathTrackerV2.5}
+  url={https://github.com/WhiteMetagross/ProjectIAV/tree/main/VehicleSegmentPathTrackerV2.5}
 }
 
 ```
+
 
