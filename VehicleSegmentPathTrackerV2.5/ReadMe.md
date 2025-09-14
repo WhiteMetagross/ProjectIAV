@@ -64,7 +64,7 @@ trackers  #DeepSORT implementation with feature extraction support.
 
 1. **Clone the repository**:
 ```bash
-git clone <repository-url>
+git clone https://github.com/WhiteMetagross/ProjectIAV/tree/main/VehicleSegmentPathTrackerV2.5
 cd VehicleSegmentPathTrackerV2.5
 ```
 
@@ -192,4 +192,5 @@ If you use this work in your research, please cite:
   year={2025},
   url={https://github.com/your-username/VehicleSegmentPathTrackerV2.5}
 }
+
 ```
