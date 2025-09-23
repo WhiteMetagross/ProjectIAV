@@ -1,0 +1,89 @@
+# Vehicle Segment Path Tracker V3 - Dependencies
+# Optimized for RTX 4060+ GPUs with CUDA 12.1 support
+# Performance target: 25+ FPS with 4,700% improvement over baseline
+
+# Core Deep Learning Framework (CUDA 12.1 optimized)
+torch>=2.3.0+cu121,<2.5.0      # PyTorch with Flash SDP and optimized attention
+torchvision>=0.18.0+cu121,<0.20.0  # Vision utilities with CUDA acceleration
+--index-url https://download.pytorch.org/whl/cu121
+
+# Object Detection and Segmentation
+ultralytics>=8.3.0,<9.0.0      # YOLO11m + SAM 2.1 Base/Small models integration
+supervision>=0.22.0,<1.0.0     # Detection utilities and visualization tools
+
+# Computer Vision and Image Processing  
+opencv-python>=4.8.0,<5.0.0    # Computer vision operations (optimized build)
+opencv-contrib-python>=4.8.0,<5.0.0  # Additional OpenCV modules
+Pillow>=10.0.0,<11.0.0         # Image processing and format support
+
+# Scientific Computing and Numerical Operations
+numpy>=1.24.0,<2.0.0           # Numerical computing (compatible with PyTorch 2.3+)
+scipy>=1.10.0,<2.0.0           # Scientific computing and optimization algorithms
+
+# Tracking and State Estimation
+filterpy>=1.4.5,<2.0.0         # Kalman filtering for motion prediction
+
+# Re-identification and Feature Extraction  
+# Note: FastReID must be installed from source for latest compatibility
+# git+https://github.com/WhiteMetagross/newFastReID.git
+
+# Configuration and Data Handling
+PyYAML>=6.0,<7.0               # Configuration file parsing
+argparse                       # Command line argument parsing (built-in)
+
+# Progress Monitoring and Visualization
+tqdm>=4.65.0,<5.0.0            # Progress bars for video processing
+matplotlib>=3.6.0,<4.0.0       # Plotting and visualization utilities
+
+# Video Processing and I/O
+# Note: FFmpeg is required for video processing but not installable via pip
+# Install separately: conda install ffmpeg or system package manager
+
+# Development and Debugging (Optional)
+# psutil>=5.9.0                # System resource monitoring
+# memory-profiler>=0.60.0      # Memory usage profiling
+# nvidia-ml-py>=11.495.46      # NVIDIA GPU monitoring
+
+# Production Requirements
+# These are automatically included in Python or handled by other packages:
+# - threading (built-in) - for parallel processing
+# - queue (built-in) - for frame queuing
+# - gc (built-in) - for garbage collection
+# - warnings (built-in) - for warning management
+# - pathlib (built-in) - for path handling
+# - time (built-in) - for performance timing
+# - sys (built-in) - for system interface
+# - os (built-in) - for operating system interface
+
+# CUDA Runtime Requirements (External)
+# These must be installed separately on the system:
+# - NVIDIA CUDA Toolkit 12.1+
+# - NVIDIA cuDNN 8.8+  
+# - NVIDIA Driver 525.60.13+ (Linux) / 527.41+ (Windows)
+
+# Hardware Requirements
+# - GPU: NVIDIA RTX 4060 or higher (8GB+ VRAM)
+# - RAM: 16GB+ system memory
+# - Storage: 10GB+ for models and dependencies
+# - CPU: 8+ cores recommended for parallel processing
+
+# Model Files (Auto-downloaded or User-provided)
+# - sam2.1_b.pt (SAM 2.1 Base) - Auto-downloaded by ultralytics
+# - sam2.1_s.pt (SAM 2.1 Small) - Auto-downloaded by ultralytics  
+# - Custom YOLO11m model - User-trained detection model
+# - veriwild_bot_R50-ibn.pth - VeriWild ReID model weights
+# - veriwild_r50_ibn_config.yml - ReID model configuration
+
+# Performance Notes:
+# - PyTorch 2.3.0+ required for Flash SDP and memory efficient attention
+# - CUDA 12.1 provides optimal performance for RTX 4060+
+# - ultralytics 8.3.0+ includes SAM 2.1 integration
+# - OpenCV 4.8.0+ includes performance optimizations
+# - FastReID must be compiled from source for latest features
+
+# Installation Instructions:
+# 1. pip install -r requirements.txt
+# 2. pip install git+https://github.com/WhiteMetagross/newFastReID.git
+# 3. Verify CUDA installation: python -c "import torch; print(torch.cuda.is_available())"
+# 4. Download or train required model files
+# 5. Run performance test: python test_parallelization.py
